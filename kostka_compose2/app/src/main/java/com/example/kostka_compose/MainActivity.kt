@@ -1,4 +1,4 @@
-package com.example.dicerollercompose
+package com.example.kostka_compose
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawingPadding
@@ -43,19 +44,17 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun DiceApp() {
-    // Definice symbolů kostek a barevného schématu
     val diceSymbols = listOf("⚀", "⚁", "⚂", "⚃", "⚄", "⚅")
-    val backgroundColor = Color(0xFFF5F3FF)
-    val primaryColor = Color(0xFF352060)
 
-    // Stavové proměnné (udržují aktuální hodnotu a stav animace)
-    var diceValue by remember { mutableStateOf(1) }
+    val backgroundColor = Color(0xFFE8F5E9)
+    val primaryColor = Color(0xFF1B5E20)
+
+    var firstDiceValue by remember { mutableStateOf(1) }
+    var secondDiceValue by remember { mutableStateOf(1) }
     var isRolling by remember { mutableStateOf(false) }
 
-    // Coroutine Scope pro asynchronní operace v Compose
     val coroutineScope = rememberCoroutineScope()
 
-    // Hlavní rozvržení s vycentrováním a ochranou proti překrytí lištami
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -66,22 +65,39 @@ fun DiceApp() {
         verticalArrangement = Arrangement.Center
     ) {
         Text(
-            text = "Hoď kostkou",
+            text = "Hoď kostkami",
             fontSize = 28.sp,
             fontWeight = FontWeight.Bold,
             color = primaryColor
         )
 
-        // Zobrazení symbolu kostky podle aktuálního stavu diceValue
+        Row(
+            horizontalArrangement = Arrangement.spacedBy(16.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.padding(vertical = 16.dp)
+        ) {
+            Text(
+                text = diceSymbols[firstDiceValue - 1],
+                fontSize = 100.sp,
+                color = primaryColor
+            )
+            Text(
+                text = diceSymbols[secondDiceValue - 1],
+                fontSize = 100.sp,
+                color = primaryColor
+            )
+        }
+
         Text(
-            text = diceSymbols[diceValue - 1],
-            fontSize = 120.sp,
+            text = "Součet: ${firstDiceValue + secondDiceValue}",
+            fontSize = 24.sp,
+            fontWeight = FontWeight.SemiBold,
             color = primaryColor,
-            modifier = Modifier.padding(vertical = 24.dp)
+            modifier = Modifier.padding(bottom = 24.dp)
         )
 
         Button(
-            enabled = !isRolling, // Tlačítko je neaktivní, pokud probíhá hovoření
+            enabled = !isRolling,
             colors = ButtonDefaults.buttonColors(
                 containerColor = primaryColor,
                 contentColor = Color.White
@@ -90,19 +106,19 @@ fun DiceApp() {
                 isRolling = true
 
                 coroutineScope.launch {
-                    // 10 náhodných změn stavu s pauzou 250 ms
                     repeat(10) {
-                        diceValue = (1..6).random()
-                        delay(250)
+                        firstDiceValue = (1..6).random()
+                        secondDiceValue = (1..6).random()
+                        delay(100)
                     }
-                    // Výsledný hod
-                    diceValue = (1..6).random()
+                    firstDiceValue = (1..6).random()
+                    secondDiceValue = (1..6).random()
                     isRolling = false
                 }
             }
         ) {
             Text(
-                text = "Hodit",
+                text = if (isRolling) "Házím…" else "Hodit",
                 fontSize = 24.sp
             )
         }
