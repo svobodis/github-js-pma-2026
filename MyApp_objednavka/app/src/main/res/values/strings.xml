@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Handball Configurator</string>
+    <string name="header_title">Handball Order</string>
+    <string name="order_title">Which handball do you want to order?</string>
+
+    <string name="ball_size_1">Size 1 (Kids / Youth)(450 CZK)</string>
+    <string name="ball_size_2">Size 2 (Women / Junior)(550 CZK)</string>
+    <string name="ball_size_3">Size 3 (Men)(650 CZK)</string>
+
+    <string name="addon_grip">Ultra grip (+100 CZK)</string>
+    <string name="addon_glue">Resin / Glue (+150 CZK)</string>
+    <string name="addon_bag">Ball bag (+200 CZK)</string>
+
+    <string name="quantity_label">Quantity:</string>
+    <string name="btn_decrease">-</string>
+    <string name="btn_increase">+</string>
+
+    <string name="btn_order">Order</string>
+    <string name="btn_reset">Reset</string>
+
+    <string name="order_summary_default">Order summary will appear here.</string>
+    <string name="order_summary_result">Handball: %1$s\nAdd-ons: %2$s\nQuantity: %3$d pcs\nTotal Price: %4$d CZK</string>
+    <string name="addons_none">None</string>
+</resources>

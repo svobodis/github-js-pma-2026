@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Konfigurátor Házenkářských Míčů</string>
+    <string name="header_title">Objednávka míče</string>
+    <string name="order_title">Jaký házenkářský míč chceš objednat?</string>
+
+    <string name="ball_size_1">Velikost 1 (Žáci / Děti)</string>
+    <string name="ball_size_2">Velikost 2 (Ženy / Dorost)</string>
+    <string name="ball_size_3">Velikost 3 (Muži)</string>
+
+    <string name="addon_grip">Ultra grip (+100 Kč)</string>
+    <string name="addon_glue">Lepidlo (+150 Kč)</string>
+    <string name="addon_bag">Taška na míč (+200 Kč)</string>
+
+    <string name="quantity_label">Počet kusů:</string>
+    <string name="btn_decrease">-</string>
+    <string name="btn_increase">+</string>
+
+    <string name="btn_order">Objednat</string>
+    <string name="btn_reset">Obnovit</string>
+
+    <string name="order_summary_default">Zde se zobrazí souhrn objednávky.</string>
+    <string name="order_summary_result">Házenkářský míč: %1$s\nDoplňky: %2$s\nPočet: %3$d ks\nCelková cena: %4$d Kč</string>
+    <string name="addons_none">Žádné</string>
+</resources>

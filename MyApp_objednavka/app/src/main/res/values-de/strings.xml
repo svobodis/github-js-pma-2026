@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Handball Konfigurator</string>
+    <string name="header_title">Handball-Bestellung</string>
+    <string name="order_title">Welchen Handball möchten Sie bestellen?</string>
+
+    <string name="ball_size_1">Größe 1 (Jugend / Kinder)(450 CZK)</string>
+    <string name="ball_size_2">Größe 2 (Frauen / B-Jugend)(550 CZK)</string>
+    <string name="ball_size_3">Größe 3 (Männer)(650 CZK)</string>
+
+    <string name="addon_grip">Ultra Grip (+100 CZK)</string>
+    <string name="addon_glue">Handballharz (+150 CZK)</string>
+    <string name="addon_bag">Balltasche (+200 CZK)</string>
+
+    <string name="quantity_label">Menge:</string>
+    <string name="btn_decrease">-</string>
+    <string name="btn_increase">+</string>
+
+    <string name="btn_order">Bestellen</string>
+    <string name="btn_reset">Zurücksetzen</string>
+
+    <string name="order_summary_default">Hier erscheint die Bestellübersicht.</string>
+    <string name="order_summary_result">Handball: %1$s\nZusätze: %2$s\nMenge: %3$d Stk.\nGesamtpreis: %4$d CZK</string>
+    <string name="addons_none">Keine</string>
+</resources>
